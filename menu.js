@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: 'Pepperoni',
+    price: 9.95,
+    category: 'entree',
+    popularity: 10,
+    rating: 7,
+    tags: ['family-friendly', 'greasy']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+// console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,6 +70,8 @@
 */
 
 //CODE HERE
+const {price} = pizza
+// console.log(price)
 
 
 /*
@@ -73,8 +82,8 @@
 */
 
 //CODE HERE
-
-
+let {category} = pizza
+// console.log(category)
 //////////////////PROBLEM 3////////////////////
 /* 
     Create an array with about 5 objects in it.
@@ -88,7 +97,48 @@
 */
 
 //CODE HERE
-
+const foodArr = [
+    {
+        name: 'Pepperoni',
+        price: 9.95,
+        category: 'entree',
+        popularity: 10,
+        rating: 7,
+        tags: ['family-friendly', 'greasy']
+    },
+    {
+        name: 'Celery',
+        price: 1.5,
+        category: 'veggie',
+        popularity: 2,
+        rating: 7,
+        tags: ['healthy', 'veggie']
+    },
+    {
+        name: 'Bagel',
+        price: 3,
+        category: 'appetizer',
+        popularity: 5,
+        rating: 4,
+        tags: ['carbs', 'kosher']
+    },
+    {
+        name: 'Chicken pot pie',
+        price: 5,
+        category: 'entree',
+        popularity: 8,
+        rating: 10,
+        tags: ['family-friendly', 'affprdable']
+    },
+    {
+        name: 'Peaches',
+        price: 3,
+        category: 'fruit',
+        popularity: 7,
+        rating: 9,
+        tags: ['healthy', 'sweet', 'delicious']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +155,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter((foodObj) => foodObj.tags.includes('family-friendly'))
+// console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,7 +199,16 @@
 */
 
 //CODE HERE
-
+function filterByProperty (property, number, type) {
+    let filteredArray = foodArr.filter((foodObj) => {
+        if(type === 'above') {
+            return foodObj[property] > number
+        } else if (type === 'below') {
+            return foodObj[property] < number
+        }
+    })
+    return filteredArray
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +218,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', '6','above'))
