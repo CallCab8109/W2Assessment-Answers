@@ -218,4 +218,4 @@ function filterByProperty (property, number, type) {
 */
 
 //CODE HERE
-console.log(filterByProperty('rating', '6','above'))
+console.log(filterByProperty('rating', 6 ,'above'))
